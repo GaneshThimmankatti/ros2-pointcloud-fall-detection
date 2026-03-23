@@ -19,7 +19,7 @@ The algorithm works in two stages:
 1. **Fall detection**  
    Points within a configurable ground height range are projected into a polar grid in front of the robot. If a grid cell contains fewer than a threshold number of ground points, it is treated as missing ground/fall.
 
-   [Fall Detection](Images/Fall_detetion.png)
+   ![Fall Detection](Images/Fall_detetion.png)
 
    In the below picture:
 
@@ -27,12 +27,12 @@ The algorithm works in two stages:
     -the magenta points are the ones classified as objects,
     -the red points are the laser scan outputs.
 
-   [Polar Grid Representation](Images/points.png)
+   ![Polar Grid Representation](Images/points.png)
 
 2. **Obstacle detection**  
    If valid ground is present, points above the ground range and below a maximum height are considered as obstacles. These are projected into 2D and returned as scan points. Thus projecting obstacles in 3D space i.e planes other than and including the laser scan plane as 2D laser scans.
 
-   [Obstacle detection](Images/Obstacle_detection.png)
+   ![Obstacle detection](Images/Obstacle_detection.png)
 
 ## Features
 
