@@ -1,23 +1,4 @@
-# README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
 # ROS 2 Point Cloud Detection
 
 A ROS 2 package for processing 3D point cloud data from a RGB-D camera to detect:
@@ -35,11 +16,23 @@ Traditional 2D laser scanners cannot detect hazards such as missing ground or ha
 
 The algorithm works in two stages:
 
-1. **Ground detection**  
-   Points within a configurable ground height range are projected into a polar grid in front of the robot. If a grid cell contains fewer than a threshold number of ground points, it is treated as missing ground.
+1. **Fall detection**  
+   Points within a configurable ground height range are projected into a polar grid in front of the robot. If a grid cell contains fewer than a threshold number of ground points, it is treated as missing ground/fall.
+
+   [Fall Detection](Images/Fall_detetion.png)
+
+   In the below picture:
+
+    -the green points are the points classified as ground, 
+    -the magenta points are the ones classified as objects,
+    -the red points are the laser scan outputs.
+
+   [Polar Grid Representation](Images/points.png)
 
 2. **Obstacle detection**  
-   If valid ground is present, points above the ground range and below a maximum height are classified as obstacles. These are projected into 2D and returned as scan points.
+   If valid ground is present, points above the ground range and below a maximum height are considered as obstacles. These are projected into 2D and returned as scan points. Thus projecting obstacles in 3D space i.e planes other than and including the laser scan plane as 2D laser scans.
+
+   [Obstacle detection](Images/Obstacle_detection.png)
 
 ## Features
 
