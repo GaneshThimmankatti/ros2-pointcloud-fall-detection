@@ -23,9 +23,9 @@ The algorithm works in two stages:
 
    In the below picture:
 
-    -the green points are the points classified as ground, 
-    -the magenta points are the ones classified as objects,
-    -the red points are the laser scan outputs.
+    -the green points are the points classified as ground.  
+    -the magenta points are the ones classified as objects.  
+    -the red points are the laser scan outputs.  
 
    ![Polar Grid Representation](Images/points.png)
 
